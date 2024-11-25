@@ -1,0 +1,230 @@
+.section-club{display: flex;
+
+width: 100%}
+
+
+.terrain{
+background-image: url('images/stadium_background.jpg') ;
+background-repeat: no-repeat;
+height: 713px;
+width: 60%;
+}
+.terrain .joueur1{
+width: 50px;
+height: 50px;
+background-color: white;
+border: solid black;
+position: relative;
+left: 430px;
+top: 40px;
+
+}
+.terrain .joueur2{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+bottom: 160px;
+left: 50px;
+
+}
+.terrain .joueur3{
+    width: 50px;
+height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+left: 300px;
+}
+.terrain .joueur4{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+    left: 540px;
+    top: 50px;
+
+}
+.terrain .joueur5{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+    left: 780px;
+    top: 5px;
+
+}
+.terrain .joueur6{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+    left: 250px;
+    bottom: 70px;
+
+}
+.terrain .joueur7{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+    left: 630px;
+    bottom: 20px;
+
+}
+.terrain .joueur8{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+    left: 430px;
+   
+
+}
+.terrain .joueur9{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+    left: 420px;
+    bottom: 80px;
+
+}
+.terrain .joueur10{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+   left: 650px;
+}
+.terrain .joueur11{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid black;
+    position: relative;
+    left: 220px;
+    top: 50px;
+}
+.img{width: 20px;
+    position: relative;
+    left: 15px;
+    top: 15px;
+}
+.changement-joueurs{
+    width: 30%;
+    text-align: center;
+}
+.changement {
+width: 100%;
+height: 50%;
+display: flex;
+flex-wrap: wrap;
+gap:0 40px ;
+}
+
+
+
+    .changement .joueur12{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+      
+    
+    }
+    .changement .joueur13{
+        width: 50px;
+    height: 50px;
+        background-color: white;
+        border: solid black;
+      
+    }
+    .changement .joueur14{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+      
+    
+    }
+    .changement .joueur15{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+       
+    
+    }
+    .changement .joueur16{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+      
+    
+    }
+    .changement .joueur17{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+      
+    
+    }
+    .changement .joueur18{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+        
+    
+    }
+    .changement .joueur19{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+       
+    
+    }
+    .changement .joueur20{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+     
+    
+    }
+    .changement .joueur21{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+      
+    }
+    .changement .joueur22{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+       
+    }
+    .changement .joueur23{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: solid black;
+       
+    }
+    .img1{width: 20px;
+        position: relative;
+        top: 15px;}
