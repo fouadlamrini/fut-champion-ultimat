@@ -1,5 +1,6 @@
 document.getElementById("formation").addEventListener("change", function() {
     let value = this.value;
+    
     let joueurs = document.querySelectorAll(".terrain > div");
 
     if(value == "4-3-3") {
@@ -85,6 +86,7 @@ let currentBoxId = null;
 
 function showForm(boxId) {
     currentBoxId = boxId;
+    
     document.getElementById('form').style.display = 'block';
 }
 
@@ -100,7 +102,7 @@ function addContent() {
     const imageFile = imageInput.files[0];
 
     if (!name || !number || !stats || !imageFile) {
-        alert('يرجى إدخال جميع البيانات!');
+        alert('il faut remplir tout les champs');
         return;
     }
 
@@ -109,10 +111,10 @@ function addContent() {
         const box = document.getElementById(`box${currentBoxId}`);
         box.innerHTML = `
             <div class="card">
-                <img src="${e.target.result}" alt="الصورة الشخصية">
-                <p>${name}</p>
-                <p>الرقم: ${number}</p>
-                <p>الإحصائيات: ${stats}</p>
+                <img src="${e.target.result}" id="fotoProfil">
+                <p>nom:${name}</p>
+                <p>numero: ${number}</p>
+                <p>statistique: ${stats}</p>
             </div>
         `;
     };
@@ -122,49 +124,3 @@ function addContent() {
 }
 
 
-// document.getElementById("add-player-btn").addEventListener("click", function () {
-//   const name = document.getElementById("player-name").value;
-//   const position = document.getElementById("player-position").value;
-//   const stats = document.getElementById("player-stats").value;
-
-//   const playerList = document.getElementById("player-list");
-//   const currentPlayers = playerList.children.length;
-
-//   if (currentPlayers >= 11) {
-//       alert("Vous ne pouvez pas ajouter plus de 11 joueurs.");
-//       return;
-//   }
-
-//   if (name && position && stats) {
-//       const playerDiv = document.createElement("div");
-//       playerDiv.innerHTML = `${name} - ${position} - ${stats} <button class="remove-player-btn">Supprimer</button>`;
-//       playerList.appendChild(playerDiv);
-
-//       const playerCard = document.createElement("div");
-//       playerCard.className = "player-card";
-//       playerCard.innerHTML = `
-//           <img src="./images/carte.webp" />
-//           <div class="card-info">
-//               <h3>${name}</h3>
-//               <p>${position}</p>
-//               <p>Stats: ${stats}</p>
-//           </div>
-//       `;
-//       document.getElementById("player-cards").appendChild(playerCard);
-
-//       // Clear input fields
-//       document.getElementById("player-name").value = '';
-//       document.getElementById("player-position").value = '';
-//       document.getElementById("player-stats").value = '';
-
-//       playerDiv.querySelector(".remove-player-btn").addEventListener("click", function () {
-//           playerList.removeChild(playerDiv);
-//           // Supprimer la carte correspondante
-//           document.getElementById("player-cards").removeChild(playerCard);
-//       });
-//   } else {
-//       alert("Veuillez remplir tous les champs.");
-//   }
-// });
-
-      

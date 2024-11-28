@@ -1,0 +1,75 @@
+html {
+    font-size: 16px; 
+}
+
+.card {margin: 0;
+    padding: 0;
+    background-image: url("./images/carte.webp");
+    width: 200px; 
+    height:200px; 
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+
+.rating {
+    line-height: 1;
+    position: relative;
+    left: 10%;
+    top: 25%;
+}
+
+p {
+    margin: 0;
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+img {
+    position: relative;
+    left: 18%;
+    top: 10%;
+    width: 64px;
+    height: 64px;
+}
+
+.nom {
+    position: relative;
+    left: 26%;
+    top: 7%;
+}
+
+.statistique {
+    display: flex;
+    position: relative;
+    left: 10%;
+    top: 10%;
+    gap: 4px; 
+}
+
+.s {
+    margin: 0;
+    font-size: 7px; 
+    font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    gap: 10%;
+    position: relative;
+    top: 12%;
+    left: 8%;
+}
+
+.logo img {
+    width: 12px;
+    height: 12px; 
+}
+
+/* .allCard {
+    display: flex;
+    width: 300px;
+    overflow-x: scroll;
+    
+    
+} */
