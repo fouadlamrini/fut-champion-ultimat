@@ -1,51 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="top-section">
+        <div class="allCard" id="allCard">
+            
+        </div>
+        <div class="button"><button onclick="afficheForm()">ajouter</button>
+            <button>suprimer</button>
+            <button>modifier</button>
+        </div>
+    </div>
     <div class="section-club">
-    <div class="terrain">
-        <div class="joueur11 box"  > </div>
-        <div class="joueur10 box"  > </div>
-        <div class="joueur9 box" ></div>
-        <div class="joueur8 box"  > </div>
-        <div class="joueur7 box"  > </div>
-        <div class="joueur6 box" > </div>
-        <div class="joueur5 box" > </div>
-        <div class="joueur4 box"  > </div>
-        <div class="joueur3 box" > </div>
-        <div class="joueur2 box"  > </div>
-        <div class="joueur1 box " > </div>
+        <div class="terrain">
+            <div class="joueur11"> </div>
+            <div class="joueur10"> </div>
+            <div class="joueur9"></div>
+            <div class="joueur8 "> </div>
+            <div class="joueur7"> </div>
+            <div class="joueur6"> </div>
+            <div class="joueur5"> </div>
+            <div class="joueur4"> </div>
+            <div class="joueur3"> </div>
+            <div class="joueur2"> </div>
+            <div class="joueur1"> </div>
+        </div>
+        <div class="changement-joueurs">
+
+            <h1>Formation</h1>
+            <select name="" id="formation">
+                <option value="4-3-3">4-3-3</option>
+                <option value="4-4-2">4-4-2</option>
+            </select>
+            <h1>changement</h1>
+            <div class="changement">
+                <div class="joueur12 "> </div>
+                <div class="joueur13 "> </div>
+                <div class="joueur14 "> </div>
+                <div class="joueur15 "> </div>
+                <div class="joueur16 "> </div>
+                <div class="joueur17"> </div>
+                <div class="joueur18 "> </div>
+                <div class="joueur19 "> </div>
+                <div class="joueur20 "> </div>
+                <div class="joueur21"> </div>
+                <div class="joueur22"> </div>
+                <div class="joueur23"> </div>
+            </div>
+
+        </div>
     </div>
-    <div class="changement-joueurs">
-       
-        <h1>Formation</h1>
-        <select name="" id="formation">
-               <option value="4-3-3">4-3-3</option>
-               <option value="4-4-2">4-4-2</option>
-       </select>
-       <h1>changement</h1>
-        <div class="changement">
-        <div class="joueur12 " > </div>
-        <div class="joueur13 "  > </div>
-        <div class="joueur14 " > </div>
-        <div class="joueur15 "  > </div>
-        <div class="joueur16 "  > </div>
-        <div class="joueur17"  > </div>
-        <div class="joueur18 "  > </div>
-        <div class="joueur19 "  > </div>
-        <div class="joueur20 "  > </div>
-        <div class="joueur21"  > </div>
-        <div class="joueur22"  > </div>
-        <div class="joueur23"  > </div>
-    </div>
-   
-    </div>
-</div>
+
+
+
+    <form id="form">
+        <input type="text" id="inputRating" placeholder="Entrer rating">
+        <p>choisir la position</p>
+        <select name="" id="select">
+            <!-- Gardient -->
+            <option value="GK">GK</option>
+            <!-- deffence -->
+            <option value="CB">CB</option>
+            <option value="RB">RB</option>
+            <option value="LB">LB</option>
+            <option value="RCD">RCD</option>
+            <option value="LCD">LCD</option>
+            <option value="LWB">LWB</option>
+            <option value="RWB">RWB</option>
+            <!-- center -->
+            <option value="CDM">CDM</option>
+            <option value="CM">CM</option>
+            <option value="CAM">CAM</option>
+            <!-- Attaque -->
+            <option value="LW">LW</option>
+            <option value="RW">RW</option>
+            <option value="CF">CF</option>
+            <option value="SS">SS</option>
+            <option value="ST">ST</option>
+        </select>
+        <input type="text" id="inputImgp" placeholder="Entrez l'image de joueur par URL">
+        <input type="text" id="inputNom" placeholder="Entrez le nom de joueur">
+        <input type="text" id="inputPace" placeholder="Entrez pace">
+        <input type="text" id="inputShooting" placeholder="Entrez shooting">
+        <input type="text" id="inputPassing" placeholder="Entrez passing">
+        <input type="text" id="inputDribbling" placeholder="Entrez dribbling">
+        <input type="text" id="inputDefending" placeholder="Entrez defending">
+        <input type="text" id="inputPhysical" placeholder="Entrez physical">
+        <input type="text" placeholder="Entrez l'image de flag par URL" id="inputImgf">
+        <input type="text" placeholder="Entrez l'image de club par URL" id="inputImgc">
+        <div class="btn-form"><button onclick="ajouter()">ajouter</button>
+            <button>annuler</button>
+        </div>
+    </form>
 
 
 
@@ -58,6 +111,7 @@
 
 
 
-<script src="./script/js.js"></script>
+    <script src="./script/js.js"></script>
 </body>
+
 </html>

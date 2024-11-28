@@ -1,3 +1,110 @@
+.top-section {
+    display: flex;
+    gap: 10%;
+}
+
+.top-section .button {
+    width: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.top-section .button button {
+    padding: 3%;
+}
+
+.top-section .button button:nth-child(1) {
+    background-color: rgb(23, 177, 23);
+}
+
+.top-section .button button:nth-child(2) {
+    background-color: red;
+}
+
+.top-section .button button:nth-child(3) {
+    background-color: rgb(70, 70, 254);
+}
+
+.card {
+    margin: 0;
+    padding: 0;
+    background-image: url("./images/carte.webp");
+    min-width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+}
+
+.rating {
+    line-height: 1;
+    position: relative;
+    left: 25px;
+    top: 40px;
+}
+
+p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+img {
+    position: relative;
+    left: 40px;
+    top: 20px;
+    width: 64px;
+    height: 64px;
+}
+
+.nom {
+    position: relative;
+    left: 26%;
+    top: 7%;
+}
+
+.statistique {
+    display: flex;
+    position: relative;
+    left: 10%;
+    top: 10%;
+    gap: 4px;
+}
+
+.s {
+    margin: 0;
+    font-size: 7px;
+    font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    gap: 10%;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.logo img {
+    width: 12px;
+    height: 12px;
+}
+
+.allCard {
+    display: flex;
+    width: 58%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 210px;
+    background-color: beige;
+}
+
+
+
 .section-club {
     display: flex;
 
@@ -9,16 +116,17 @@
     background-image: url('images/stadium_background.jpg');
     background-repeat: no-repeat;
     background-size: contain;
-    
-    height: 713px;
-    width: 60%; 
+
+    min-height: 713px;
+    width: 60%;
 }
 
 .terrain>div {
     width: 50px;
     height: 50px;
-    
+
 }
+
 .terrain .joueur1 {
     background-color: white;
     border: solid black;
@@ -27,6 +135,7 @@
     top: ;
     transition: 1s;
 }
+
 .terrain .joueur2 {
     background-color: white;
     border: solid black;
@@ -239,5 +348,58 @@
 }
 
 
-#fotoProfil{position: relative;
-top: -50px;}
+#fotoProfil {
+    position: relative;
+    top: -50px;
+}
+
+#formation {
+    padding: 1%;
+    width: 20%;
+}
+
+form {
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap: 20px;
+    bottom: 40%;
+    left: 60%;
+    width: 20%;
+    background-color: beige;
+    display: none;
+}
+
+form select {
+    width: 50%;
+    display: flex;
+    position: relative;
+    left: 25%;
+}
+
+form input {
+    width: 70%;
+    position: relative;
+    left: 15%;
+}
+
+.btn-form {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2%;
+    padding: 2%;
+}
+
+form button:nth-child(1):hover {
+    background-color: rgb(23, 177, 23);
+}
+
+form button:nth-child(2):hover {
+    background-color: red;
+}
+
+form p {
+    text-align: center;
+}
