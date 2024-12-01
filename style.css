@@ -63,8 +63,9 @@ img {
 
 .nom {
     position: relative;
-    left: 26%;
+    left: 20%;
     top: 7%;
+    
 }
 
 .statistique {
@@ -107,15 +108,16 @@ img {
 
 .section-club {
     display: flex;
-
-    width: 100%
+    width: 100%;
 }
+.section-club h1 {position: relative;
+left: 15%; }
 
 
 .terrain {
     background-image: url('images/stadium_background.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-position: center;
 
     min-height: 713px;
     width: 60%;
@@ -356,19 +358,23 @@ img {
 #formation {
     padding: 1%;
     width: 20%;
+    height: 4%;
+    margin-top: 5%;
 }
 
 form {
-    width: 100vh;
+
     display: flex;
     flex-direction: column;
     position: fixed;
     gap: 20px;
-    bottom: 40%;
+    bottom: 30%;
     left: 60%;
     width: 20%;
+    height: 60vh;
     background-color: beige;
     display: none;
+    
 }
 
 form select {
@@ -382,6 +388,7 @@ form input {
     width: 70%;
     position: relative;
     left: 15%;
+    margin: 5px;
 }
 
 .btn-form {
@@ -403,3 +410,76 @@ form button:nth-child(2):hover {
 form p {
     text-align: center;
 }
+form input{outline: none;}
+#inputRating{margin-top: 10px;}
+
+/* .menu{
+    width: 300px;
+    height:300px;
+    position: fixed;
+    left: 10%;
+    top: 50%;
+    background-color:beige;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+    
+    
+    } */
+    /* .menu .fermer{width: 6%;
+    text-align: center;
+    position: relative;
+    left: 88%;
+    top: 4%;
+    color: rgb(10, 9, 9);
+    border:none}
+    .menu .fermer:hover{background-color: red;} */
+
+@media screen and (max-width:700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .top-section{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        gap: 20px;
+    }
+    .section-club{
+        flex-direction: column;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+    #formation {
+        width: 50%;
+    }
+    .section-club h1{
+        text-align: center;
+        position:initial;
+    }
+    .terrain{width: 60%;}
+
+    /* .menu{
+        width: 300px;
+        height:300px;
+        position: fixed;
+        left: 30%;
+        top: 50%;
+        background-color:beige;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        display: none;
+        
+        
+        } */
+}
+
