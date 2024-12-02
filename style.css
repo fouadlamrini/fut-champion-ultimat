@@ -1,3 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
 .top-section {
     display: flex;
     gap: 10%;
@@ -36,6 +42,8 @@
     height: 200px;
     background-repeat: no-repeat;
     background-size: contain;
+    position: relative;
+    left: 10%;
 
 
 }
@@ -126,6 +134,9 @@ left: 15%; }
 .terrain>div {
     width: 50px;
     height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
 
 }
 
@@ -413,30 +424,7 @@ form p {
 form input{outline: none;}
 #inputRating{margin-top: 10px;}
 
-/* .menu{
-    width: 300px;
-    height:300px;
-    position: fixed;
-    left: 10%;
-    top: 50%;
-    background-color:beige;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    display: none;
-    
-    
-    } */
-    /* .menu .fermer{width: 6%;
-    text-align: center;
-    position: relative;
-    left: 88%;
-    top: 4%;
-    color: rgb(10, 9, 9);
-    border:none}
-    .menu .fermer:hover{background-color: red;} */
+
 
 @media screen and (max-width:700px) {
     body {
@@ -464,22 +452,4 @@ form input{outline: none;}
         position:initial;
     }
     .terrain{width: 60%;}
-
-    /* .menu{
-        width: 300px;
-        height:300px;
-        position: fixed;
-        left: 30%;
-        top: 50%;
-        background-color:beige;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        display: none;
-        
-        
-        } */
 }
-

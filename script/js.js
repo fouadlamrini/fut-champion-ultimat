@@ -6,23 +6,23 @@ document.getElementById("formation").addEventListener("change", function () {
 
     if (value == "4-3-3") {
         //joueur11
-        joueurs[0].style.top = "50px";
-        joueurs[0].style.left = "220px";
+        joueurs[0].style.top = "8%";
+        joueurs[0].style.left = "25%";
         //joueur10
-        joueurs[1].style.left = "650px";
+        joueurs[1].style.left = "71%";
         //joueur9
-        joueurs[2].style.top = "-100px";
-        joueurs[2].style.left = "420px";
+        joueurs[2].style.top = "-12%";
+        joueurs[2].style.left = "49%";
         //joueur8
 
-        joueurs[3].style.left = "430px";
-        joueurs[3].style.top = "-20px";
+        joueurs[3].style.left = "48%";
+        joueurs[3].style.top = "-5%";
         //joueur7
-        joueurs[4].style.top = "-20px";
-        joueurs[4].style.left = "600px";
+        joueurs[4].style.top = "-3%";
+        joueurs[4].style.left = "68%";
         //joueur6
-        joueurs[5].style.top = "-75px";
-        joueurs[5].style.left = "250px";
+        joueurs[5].style.top = "-10.5%";
+        joueurs[5].style.left = "28%";
         //joueur5
         joueurs[6].style.top = "3.3%";
         joueurs[6].style.left = "88%";
@@ -85,6 +85,10 @@ let form = document.getElementById("form");
 function afficheForm() {
 
     form.style.display = "block";
+    document.querySelector(".btn-form button:nth-child(1)").textContent = "ajouter";
+    document.querySelector(".btn-form button:nth-child(1)").onclick = ajouter;
+    
+   
 }
 
 // ajouter le carde
@@ -107,7 +111,7 @@ function ajouter() {event.preventDefault();
         let inputRating = document.getElementById("inputRating").value;
         let select = document.getElementById("select").value;
         let inputImgp = document.getElementById("inputImgp").value;
-        let inputNom = document.getElementById("inputNom").value;
+        let inputNom = document.getElementById("inputNom").value.split(" ")[0];
         let inputPace = document.getElementById("inputPace").value;
         let inputShooting = document.getElementById("inputShooting").value;
         let inputPassing = document.getElementById("inputPassing").value;
@@ -201,12 +205,6 @@ function annuler(){
   event.preventDefault();
   form.style.display = "none";
 }
-
-
-
-
-
-
 // ajoute les joueurs dans le terrain
 
 
@@ -221,20 +219,138 @@ joueurs.forEach(function (joueur) {
     });
 });
 
-document.querySelectorAll(".allCard .card").forEach(function (card) {
-    card.addEventListener("click", function () {
 
-        if (selectionJoueur) {
-            const cardClone = card.cloneNode(true);
-            selectionJoueur.innerHTML = "";  
-            selectionJoueur.appendChild(cardClone); 
-            cardClone.style.transform = "scale(0.5)"; 
-            selectionJoueur = null; 
-        } else {
-            alert("il faut choisir le joueur");  
+// active le mode de supprission
+document.querySelector(".button button:nth-child(2)").addEventListener("click", modeSupprimer);
+function modeSupprimer() {
+    const deleteBtn = document.querySelector(".button button:nth-child(2)");
+    
+    // cahnger l'etat de button de suprimer
+
+    // syntax: elemnt.classList("class-x");
+//  classList.contains(""): verifier si element contient la classe qui s'apelle class-x
+    if (deleteBtn.classList.contains("delete-mode")) {
+        deleteBtn.classList.remove("delete-mode");
+        deleteBtn.style.backgroundColor = "";
+        deleteBtn.textContent = "supprimer";
+    } else {
+        deleteBtn.classList.add("delete-mode");
+        deleteBtn.style.backgroundColor = "red";
+        deleteBtn.textContent = "Mode suppression";
+    }
+}
+// active le mode de modification
+document.querySelector(".button button:nth-child(3)").addEventListener("click", modeModification);
+function modeModification() {
+    const modifierBTN = document.querySelector(".button button:nth-child(3)");
+    
+    // cahnger l'etat de button de modifier
+    if (modifierBTN.classList.contains("modifier-mode")) {
+        modifierBTN.classList.remove("modifier-mode");
+        modifierBTN.style.backgroundColor = "";
+        modifierBTN.textContent = "modifier";
+    } else {
+        modifierBTN.classList.add("modifier-mode");
+        modifierBTN.style.backgroundColor = "blue";
+        modifierBTN.textContent = "Mode modification";
+    }
+}
+
+
+
+// Event Delegation (pour donner evenment pour chaque childrent il suffit de donne un evenment pour le parent)
+// il y'a deux methode foreach pour donne evenment pour chack element ou bien un evenment pour parent
+
+
+document.getElementById("allCard").addEventListener("click", function(event) {
+    // syntax element.closest(selector)   
+    // cherche sur un element qui contient a selector (class id tag) commence par element si ne trouve pas passe a son parent....
+
+
+    const card = event.target.closest(".card");
+    if (!card) return;
+
+    
+    if (document.querySelector(".button button.delete-mode")) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer cette carte ?")) {
+            card.remove();
         }
-    });
+        return;
+    } 
+
+   
+    if (document.querySelector(".btn-form button:nth-child(1)").textContent === "modifier") {
+        cardToEdit = card;
+        document.getElementById("inputRating").value = card.querySelector("#rating").textContent;
+        document.getElementById("select").value = card.querySelector("#position").textContent;
+        document.getElementById("inputImgp").value = card.querySelector("#imgp").src;
+        document.getElementById("inputNom").value = card.querySelector("#nom").textContent;
+        document.getElementById("inputPace").value = card.querySelector("#pace").textContent;
+        document.getElementById("inputShooting").value = card.querySelector("#shooting").textContent;
+        document.getElementById("inputPassing").value = card.querySelector("#passing").textContent;
+        document.getElementById("inputDribbling").value = card.querySelector("#dribbling").textContent;
+        document.getElementById("inputDefending").value = card.querySelector("#defending").textContent;
+        document.getElementById("inputPhysical").value = card.querySelector("#physical").textContent;
+        document.getElementById("inputImgf").value = card.querySelector("#imgf").src;
+        document.getElementById("inputImgc").value = card.querySelector("#imgc").src;
+        
+        form.style.display = "block";
+    } else if (selectionJoueur) {
+      // ajoute les joueurs dans le terrain
+  
+      selectionJoueur.appendChild(card); 
+      card.style.transform = "scale(0.7)"; 
+        selectionJoueur.style.backgroundColor = "white";
+        selectionJoueur = null; 
+    } else {
+        alert("il faut choisir le joueur");  
+    }
 });
+// ajout un variable pour stocker la carte qu'il va modifier
+let cardToEdit = null;
+
+//afficher la forme de modification
+function showEditForm() {
+    const form = document.getElementById("form");
+    document.querySelector(".btn-form button:first-child").textContent = "modifier";
+    document.querySelector(".btn-form button:first-child").onclick = updateCard;
+}
+
+document.querySelector(".button button:nth-child(3)").onclick = function() {
+    document.querySelector(".btn-form button:first-child").textContent = "modifier";
+    document.querySelector(".btn-form button:first-child").onclick = updateCard;
+};
+
+// mise a jour de la carte
+function updateCard(event) {
+    event.preventDefault();
+    
+    if (!cardToEdit) return;
+    
+    
+    cardToEdit.querySelector("#rating").textContent = document.getElementById("inputRating").value;
+    cardToEdit.querySelector("#position").textContent = document.getElementById("select").value;
+    cardToEdit.querySelector("#imgp").src = document.getElementById("inputImgp").value;
+    cardToEdit.querySelector("#nom").textContent = document.getElementById("inputNom").value;
+    cardToEdit.querySelector("#pace").textContent = document.getElementById("inputPace").value;
+    cardToEdit.querySelector("#shooting").textContent = document.getElementById("inputShooting").value;
+    cardToEdit.querySelector("#passing").textContent = document.getElementById("inputPassing").value;
+    cardToEdit.querySelector("#dribbling").textContent = document.getElementById("inputDribbling").value;
+    cardToEdit.querySelector("#defending").textContent = document.getElementById("inputDefending").value;
+    cardToEdit.querySelector("#physical").textContent = document.getElementById("inputPhysical").value;
+    cardToEdit.querySelector("#imgf").src = document.getElementById("inputImgf").value;
+    cardToEdit.querySelector("#imgc").src = document.getElementById("inputImgc").value;
+    
+    // 
+    form.style.display = "none";
+    cardToEdit = null;
+    document.querySelector(".btn-form button:first-child").textContent = "ajouter";
+    document.querySelector(".btn-form button:first-child").onclick = ajouter;
+    
+  
+}
+
+
 
 
 
