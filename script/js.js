@@ -77,7 +77,7 @@ document.getElementById("formation").addEventListener("change", function () {
     }
 });
 
-function firstdisplay() {
+function formationDefault() {
     joueurs[0].style.top = "8%";
     joueurs[0].style.left = "25%";
     //joueur10
@@ -110,7 +110,7 @@ function firstdisplay() {
     joueurs[10].style.top = "5%";
     joueurs[10].style.left = "48%";
 }
-firstdisplay();
+formationDefault();
 
 // affiche la forme
 let form = document.getElementById("form");
@@ -368,11 +368,11 @@ function showEditForm() {
 
 document.querySelector(".button button:nth-child(3)").onclick = function() {
     document.querySelector(".btn-form button:nth-child(1)").textContent = "modifier";
-    document.querySelector(".btn-form button:nth-child(1)").onclick = updateCard;
+    document.querySelector(".btn-form button:nth-child(1)").onclick = miseAjour;
 };
 
 // mise a jour de la carte
-function updateCard(event) {
+function miseAjour(event) {
     event.preventDefault();
     
     if (!cardToEdit) return;

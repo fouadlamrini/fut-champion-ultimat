@@ -440,7 +440,7 @@ form button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ;
 }
 
 form button:nth-child(1) {
