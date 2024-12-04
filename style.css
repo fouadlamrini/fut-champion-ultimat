@@ -22,17 +22,36 @@
     padding: 3%;
 }
 
+.top-section .button button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .top-section .button button:nth-child(1) {
-    background-color: rgb(23, 177, 23);
+    background: linear-gradient(135deg, #28a745, #218838); 
 }
 
 .top-section .button button:nth-child(2) {
-    background-color: red;
+    background: linear-gradient(135deg, #dc3545, #c82333);
 }
 
 .top-section .button button:nth-child(3) {
-    background-color: rgb(70, 70, 254);
+    background: linear-gradient(135deg, #007bff, #0056b3); 
 }
+
+.top-section .button button:hover {
+    transform: scale(1.05);
+  
+}
+
+
 
 .card {
     margin: 0;
@@ -374,55 +393,81 @@ align-items: center;
 }
 
 form {
-
     display: flex;
     flex-direction: column;
     position: fixed;
-    gap: 20px;
-    bottom: 30%;
-    left: 60%;
-    width: 20%;
-    height: 60vh;
-    background-color: beige;
-    display: none;
-    
+    gap: 15px;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 25%;
+    height: auto;
+    padding: 20px;
+    background-color: #f5f5dc; /* لون بيج ناعم */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* يمكن تغييره بـ JavaScript عند الحاجة */
 }
 
 form select {
-    width: 50%;
-    display: flex;
-    position: relative;
-    left: 25%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form input {
-    width: 70%;
-    position: relative;
-    left: 15%;
-    margin: 5px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }
+
 
 .btn-form {
     display: flex;
     justify-content: center;
-    gap: 5%;
-    margin-top: 2%;
-    padding: 2%;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:nth-child(1) {
+    background-color: #17b117;
+    color: white;
 }
 
 form button:nth-child(1):hover {
-    background-color: rgb(23, 177, 23);
+    background-color: #0f8f0f;
+}
+
+form button:nth-child(2) {
+    background-color: red;
+    color: white;
 }
 
 form button:nth-child(2):hover {
-    background-color: red;
+    background-color: #c00;
 }
 
 form p {
     text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
 }
-form input{outline: none;}
-#inputRating{margin-top: 10px;}
+
 
 
 

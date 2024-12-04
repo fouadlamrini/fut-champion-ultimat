@@ -2,8 +2,6 @@ let joueurs = document.querySelectorAll(".terrain > div");
 document.getElementById("formation").addEventListener("change", function () {
     let value = this.value;
 
-   
-
     if (value == "4-3-3") {
         //joueur11
         joueurs[0].style.top = "8%";
@@ -79,6 +77,40 @@ document.getElementById("formation").addEventListener("change", function () {
     }
 });
 
+function firstdisplay() {
+    joueurs[0].style.top = "8%";
+    joueurs[0].style.left = "25%";
+    //joueur10
+    joueurs[1].style.left = "71%";
+    //joueur9
+    joueurs[2].style.top = "-12%";
+    joueurs[2].style.left = "49%";
+    //joueur8
+
+    joueurs[3].style.left = "48%";
+    joueurs[3].style.top = "-5%";
+    //joueur7
+    joueurs[4].style.top = "-3%";
+    joueurs[4].style.left = "68%";
+    //joueur6
+    joueurs[5].style.top = "-10.5%";
+    joueurs[5].style.left = "28%";
+    //joueur5
+    joueurs[6].style.top = "3.3%";
+    joueurs[6].style.left = "88%";
+    //joueur4
+    joueurs[7].style.top = "7.7%";
+    joueurs[7].style.left = "63%";
+    //joueur3
+    joueurs[8].style.left = "32%";
+    //joueur2
+    joueurs[9].style.top = "-20%";
+    joueurs[9].style.left = "5%";
+    //joueur1
+    joueurs[10].style.top = "5%";
+    joueurs[10].style.left = "48%";
+}
+firstdisplay();
 
 // affiche la forme
 let form = document.getElementById("form");
@@ -172,34 +204,44 @@ function ajouter() {event.preventDefault();
         document.getElementById("inputPhysical").value = "";
         document.getElementById("inputImgf").value = "";
         document.getElementById("inputImgc").value = "";
-    }
-    if (inputRating.value == "" ){ document.getElementById("inputRating").style.borderBlockColor="red";
-    }
-      if (inputImgp.value == "" ){ document.getElementById("inputImgp").style.borderBlockColor="red";
-    }
-      if (inputNom.value == "" ){ document.getElementById("inputNom").style.borderBlockColor="red";
-    }
-      if (inputPace.value == "" ){ document.getElementById("inputPace").style.borderBlockColor="red";
-    }
-      if (inputShooting.value == "" ){ document.getElementById("inputShooting").style.borderBlockColor="red";
-    }
-      if (inputPassing.value == "" ){ document.getElementById("inputPassing").style.borderBlockColor="red";
-    }
-      if (inputDribbling.value == "" ){ document.getElementById("inputDribbling").style.borderBlockColor="red";
-    }
-      if (inputDefending.value == "" ){ document.getElementById("inputDefending").style.borderBlockColor="red";
-    }
-      if (inputPhysical.value == "" ){ document.getElementById("inputPhysical").style.borderBlockColor="red";
-    }
-      if (inputImgf.value == "" ){ document.getElementById("inputImgf").style.borderBlockColor="red";
-    } 
-     if (inputImgc.value == "" ){ document.getElementById("inputImgc").style.borderBlockColor="red";
-    }
 
-
-
-
-}
+        document.getElementById("inputRating").style.borderBlockColor="";
+        document.getElementById("inputImgp").style.borderBlockColor="";
+        document.getElementById("inputNom").style.borderBlockColor="";
+        document.getElementById("inputPace").style.borderBlockColor="";
+        document.getElementById("inputShooting").style.borderBlockColor="";
+        document.getElementById("inputPassing").style.borderBlockColor="";
+        document.getElementById("inputDribbling").style.borderBlockColor="";
+        document.getElementById("inputDefending").style.borderBlockColor="";
+        document.getElementById("inputPhysical").style.borderBlockColor="";
+        document.getElementById("inputImgf").style.borderBlockColor="";
+        document.getElementById("inputImgc").style.borderBlockColor="";
+    }
+    else {
+        if (inputRating.value == "" ){ document.getElementById("inputRating").style.borderBlockColor="red";
+        }
+        if (inputImgp.value == "" ){ document.getElementById("inputImgp").style.borderBlockColor="red";
+        }
+        if (inputNom.value == "" ){ document.getElementById("inputNom").style.borderBlockColor="red";
+        }
+        if (inputPace.value == "" ){ document.getElementById("inputPace").style.borderBlockColor="red";
+        }
+        if (inputShooting.value == "" ){ document.getElementById("inputShooting").style.borderBlockColor="red";
+        }
+        if (inputPassing.value == "" ){ document.getElementById("inputPassing").style.borderBlockColor="red";
+        }
+        if (inputDribbling.value == "" ){ document.getElementById("inputDribbling").style.borderBlockColor="red";
+        }
+        if (inputDefending.value == "" ){ document.getElementById("inputDefending").style.borderBlockColor="red";
+        }
+        if (inputPhysical.value == "" ){ document.getElementById("inputPhysical").style.borderBlockColor="red";
+        }
+        if (inputImgf.value == "" ){ document.getElementById("inputImgf").style.borderBlockColor="red";
+        } 
+        if (inputImgc.value == "" ){ document.getElementById("inputImgc").style.borderBlockColor="red";
+        }
+    }
+}                
 // annuler la forme de l'ajoute
 function annuler(){
   event.preventDefault();
@@ -231,11 +273,9 @@ function modeSupprimer() {
 //  classList.contains(""): verifier si element contient la classe qui s'apelle class-x
     if (deleteBtn.classList.contains("delete-mode")) {
         deleteBtn.classList.remove("delete-mode");
-        deleteBtn.style.backgroundColor = "";
         deleteBtn.textContent = "supprimer";
     } else {
         deleteBtn.classList.add("delete-mode");
-        deleteBtn.style.backgroundColor = "red";
         deleteBtn.textContent = "Mode suppression";
     }
 }
@@ -247,16 +287,15 @@ function modeModification() {
     // cahnger l'etat de button de modifier
     if (modifierBTN.classList.contains("modifier-mode")) {
         modifierBTN.classList.remove("modifier-mode");
-        modifierBTN.style.backgroundColor = "";
         modifierBTN.textContent = "modifier";
     } else {
         modifierBTN.classList.add("modifier-mode");
-        modifierBTN.style.backgroundColor = "blue";
         modifierBTN.textContent = "Mode modification";
     }
 }
 
-
+// ajout un variable pour stocker la carte qu'il va modifier
+let cardToEdit = null;
 
 // Event Delegation (pour donner evenment pour chaque childrent il suffit de donne un evenment pour le parent)
 // il y'a deux methode foreach pour donne evenment pour chack element ou bien un evenment pour parent
@@ -271,7 +310,7 @@ document.getElementById("allCard").addEventListener("click", function(event) {
     if (!card) return;
 
     
-    if (document.querySelector(".button button.delete-mode")) {
+    if (document.querySelector(".button .delete-mode")) {
         if (confirm("Êtes-vous sûr de vouloir supprimer cette carte ?")) {
             card.remove();
         }
@@ -280,6 +319,19 @@ document.getElementById("allCard").addEventListener("click", function(event) {
 
    
     if (document.querySelector(".btn-form button:nth-child(1)").textContent === "modifier") {
+
+        document.getElementById("inputRating").value = "";
+        document.getElementById("inputImgp").value = "";
+        document.getElementById("inputPace").value = "";
+        document.getElementById("inputNom").value = "";
+        document.getElementById("inputShooting").value = "";
+        document.getElementById("inputPassing").value = "";
+        document.getElementById("inputDribbling").value = "";
+        document.getElementById("inputDefending").value = "";
+        document.getElementById("inputPhysical").value = "";
+        document.getElementById("inputImgf").value = "";
+        document.getElementById("inputImgc").value = "";
+
         cardToEdit = card;
         document.getElementById("inputRating").value = card.querySelector("#rating").textContent;
         document.getElementById("select").value = card.querySelector("#position").textContent;
@@ -300,25 +352,23 @@ document.getElementById("allCard").addEventListener("click", function(event) {
   
       selectionJoueur.appendChild(card); 
       card.style.transform = "scale(0.7)"; 
-        selectionJoueur.style.backgroundColor = "white";
         selectionJoueur = null; 
     } else {
         alert("il faut choisir le joueur");  
     }
 });
-// ajout un variable pour stocker la carte qu'il va modifier
-let cardToEdit = null;
+
 
 //afficher la forme de modification
 function showEditForm() {
     const form = document.getElementById("form");
-    document.querySelector(".btn-form button:first-child").textContent = "modifier";
-    document.querySelector(".btn-form button:first-child").onclick = updateCard;
+    document.querySelector(".btn-form button:nth-child(1)").textContent = "modifier";
+    document.querySelector(".btn-form button:nth-child(1)").onclick = updateCard;
 }
 
 document.querySelector(".button button:nth-child(3)").onclick = function() {
-    document.querySelector(".btn-form button:first-child").textContent = "modifier";
-    document.querySelector(".btn-form button:first-child").onclick = updateCard;
+    document.querySelector(".btn-form button:nth-child(1)").textContent = "modifier";
+    document.querySelector(".btn-form button:nth-child(1)").onclick = updateCard;
 };
 
 // mise a jour de la carte
@@ -331,7 +381,7 @@ function updateCard(event) {
     cardToEdit.querySelector("#rating").textContent = document.getElementById("inputRating").value;
     cardToEdit.querySelector("#position").textContent = document.getElementById("select").value;
     cardToEdit.querySelector("#imgp").src = document.getElementById("inputImgp").value;
-    cardToEdit.querySelector("#nom").textContent = document.getElementById("inputNom").value;
+    cardToEdit.querySelector("#nom").textContent = document.getElementById("inputNom").value.split(" ")[0];
     cardToEdit.querySelector("#pace").textContent = document.getElementById("inputPace").value;
     cardToEdit.querySelector("#shooting").textContent = document.getElementById("inputShooting").value;
     cardToEdit.querySelector("#passing").textContent = document.getElementById("inputPassing").value;
@@ -344,8 +394,8 @@ function updateCard(event) {
     // 
     form.style.display = "none";
     cardToEdit = null;
-    document.querySelector(".btn-form button:first-child").textContent = "ajouter";
-    document.querySelector(".btn-form button:first-child").onclick = ajouter;
+    document.querySelector(".btn-form button:nth-child(1)").textContent = "ajouter";
+    document.querySelector(".btn-form button:nth-child(1)").onclick = ajouter;
     
   
 }
