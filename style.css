@@ -403,11 +403,11 @@ form {
     width: 25%;
     height: auto;
     padding: 20px;
-    background-color: #f5f5dc; /* لون بيج ناعم */
+    background-color: #f5f5dc;
     border: 2px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: none; /* يمكن تغييره بـ JavaScript عند الحاجة */
+    display: none; 
 }
 
 form select {
