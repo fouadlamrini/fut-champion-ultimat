@@ -353,9 +353,18 @@ document.getElementById("allCard").addEventListener("click", function(event) {
       selectionJoueur.appendChild(card); 
       card.style.transform = "scale(0.7)"; 
         selectionJoueur = null; 
-    } else {
+    }
+    //   else if (document.querySelector(".joueur1").querySelector(".select").value!="GK"){
+
+    //     alert("ce n'est pas un GK")
+    // }
+    
+    else {
         alert("il faut choisir le joueur");  
     }
+
+
+   
 });
 
 
@@ -402,6 +411,63 @@ function miseAjour(event) {
 
 
 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let carte=document.querySelector(".card").addEventListener("click",function(){
+
+console.log(carte.querySelector("#nom").textContent);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
 
 
 
